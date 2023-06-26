@@ -12,12 +12,18 @@ import {
 import { getAllVehiculos } from "../api/vehiculo.api";
 import { useForm } from "react-hook-form";
 import { DocumentosForm } from "./form/DocumentosForm";
+
+
 import { toast } from "react-hot-toast";
+
+
+
 function Documentos() {
-  const [documentos, setDocumentos] = useState([]);
+  const [documentos, setDocumentos] = useState([]);//se almacenara los datos de la peticion
 
   useEffect(() => {
-    async function loadDocumentos() {
+    async function loadDocumentos() {//segundo plano
+
       const resDocumentos = await getAllDocumentos();
       setDocumentos(resDocumentos.data);
     }
@@ -25,7 +31,9 @@ function Documentos() {
   }, []);
 
   const removeDocumento = async (id) => {
-    await deleteDocumento(id);
+
+    await deleteDocumento(id);//
+
     setDocumentos(documentos.filter((documento) => documento.documento != id));
     toast.success("Se elimino correctamente", {
       position: "bottom-right",
@@ -62,7 +70,7 @@ function Documentos() {
                   </tr>
                 </thead>
                 <tbody>
-                  {documentos.map((documento) => (
+                  {documentos.map((documento) => (//
                     <tr key={documento.documento}>
                       <td>{documento.documento}</td>
                       <td>{documento.nombre}</td>
@@ -70,7 +78,7 @@ function Documentos() {
                       <td>{documento.vehiculo}</td>
 
                       <td>
-                        <Link className="btn btn-primary" to={`/documentos/${documento.documento}`}>
+                        <Link className="btn btn-primary" to={`/documentos-form/${documento.documento}`}>
                           editar
                         </Link>
                       </td>

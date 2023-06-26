@@ -19,13 +19,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/parentesco" element={<Parentesco />} />
 
-        <Route exact path="/vehiculos/:search?" element={<Vehiculos />} />
-        <Route path="/vehiculos/:id" element={<VehiculosForm />} />       
+        <Route path="/vehiculos/:search?" element={<Vehiculos />} />
+        <Route path="/vehiculos-form/:id" element={<VehiculosForm />} />       
         <Route path="/vehiculos-form" element={<VehiculosForm />} />
         {/* <Route path="/vehiculos-search/:search" element={<Vehiculos />} /> */}
 
         <Route path="/documentos" element={<Documentos />} />
-        <Route path="/documentos/:id" element={<DocumentosForm />} />
+        <Route path="/documentos-form/:id" element={<DocumentosForm />} />
         <Route path="/documentos-form" element={<DocumentosForm />} />
       </Routes>
       <Toaster />

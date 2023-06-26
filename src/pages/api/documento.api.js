@@ -8,7 +8,7 @@ const DocumentoApi = axios.create({
 }
  */
 //OBSERVACION  => LOS PARAMETROS NOS PUEDEN TENER EL MISMO NOMBRE , A PESAR DE QUE ESTEN EN ORDEN
-export const getAllDocumentos = () => DocumentoApi.get("/");
+export const getAllDocumentos = () => DocumentoApi.get("/");//todos los datos
 
 export const getDocumento = (documento_id) => DocumentoApi.get(`/${documento_id}`);
 

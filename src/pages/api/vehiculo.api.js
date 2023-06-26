@@ -19,4 +19,5 @@ export const updateVehiculo = (vehiculo_id, vehiculo) => VehiculoApi.put(`/${veh
 
 export const deleteVehiculo = (vehiculo_id) => VehiculoApi.delete(`/${vehiculo_id}`);
 
+//search
 export const getSearchVehiculo = (vehiculo_search) => VehiculoSearchApi.get(`/${vehiculo_search}`);

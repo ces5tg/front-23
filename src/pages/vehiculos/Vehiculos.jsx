@@ -66,6 +66,7 @@ function Vehiculos() {
               <input
                 type="text"
                 value={search}
+                className="c"
                 onChange={(e) => {setSearch(e.target.value)
                                   console.log(e.target.value)}}
               />
@@ -100,7 +101,7 @@ function Vehiculos() {
                         <td>
                           <Link
                             className="btn btn-primary"
-                            to={`/vehiculos/${vehiculo.vehiculo_id}`}
+                            to={`/vehiculos-form/${vehiculo.vehiculo_id}`}
                           >
                             editar
                           </Link>
