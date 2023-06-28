@@ -28,7 +28,7 @@ function Documentos() {
       setDocumentos(resDocumentos.data);
     }
     loadDocumentos();
-  }, []);
+  });
 
   const removeDocumento = async (id) => {
 
@@ -61,7 +61,7 @@ function Documentos() {
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Aseguradora</th>
                     <th scope="col">Fecha Nacimiento</th>
                     <th scope="col">Vehiculo</th>
                     <th colSpan={2} className="text-center">

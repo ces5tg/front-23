@@ -22,8 +22,8 @@ export function VehiculosForm() {
       // funcion a la que cargamos los vehiculos - peticion API
       /* const res = await getAllVehiculos();
       console.log(res); */
-      if (params.id) {
-        const vehiculos = await getVehiculo(params.id);
+      if (params.id) {//id - parametro que pasemos por la url
+        const vehiculos = await getVehiculo(params.id);//solo trae los datos del objeto deseado
         setValue("placa", vehiculos.data.placa);
         setValue("kilometraje", vehiculos.data.kilometraje);
         setValue("marca", vehiculos.data.marca);
@@ -42,7 +42,7 @@ export function VehiculosForm() {
   const onSubmit = handleSubmit(async (data) => {
     //console.log(data); // muestra los datos del FORMULARIO
 
-    if (params.id) {
+    if (params.id) {//solo va a entrar miesntra se envie algo por la url
       await updateVehiculo(params.id, data);
       toast.success("Se Actulizo correctamente", {
         position: "bottom-right",
@@ -96,7 +96,7 @@ export function VehiculosForm() {
                     <input
                       type="text"
                       className="form-control"
-                      {...register("placa", { required: true })}
+                      {...register("placa", { required: true }) }
                     />
                     {errors.placa && <span>este es un campo requerido</span>}
                     {/* si existe un error se vera la etiqueta span */}

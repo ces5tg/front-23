@@ -17,7 +17,7 @@ function Vehiculos() {
 
   const param = useParams();
   useEffect(() => {
-    async function loadVehiculos() {
+    async function loadVehiculos() {//funcion
       if (param.search) {
         const resVehiculos = await getSearchVehiculo(param.search);
         setVehiculos(resVehiculos.data);
@@ -32,8 +32,8 @@ function Vehiculos() {
       window.location.reload();
       shouldReloadPage = false
     } */
-    loadVehiculos();
-  }, [param]);
+    loadVehiculos();//llamando
+  }, [param]);//cuadno detecta algun cambio en los atributos , automaticamente vuelve a cargar el useEffect
 
   const removeVehiculos = async (id) => {
     console.log(id);
